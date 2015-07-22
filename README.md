@@ -9,3 +9,6 @@ osu.mengsky.net 是一个osu!面普的中国镜像，部署在京东CDN，正在
 
 #### qiniu
 七牛API文件上传实现，因为官方SDK依赖第三方组建requests实行规范文件名标准必须为ascii无法满足需求。
+
+# License
+GPLv3
