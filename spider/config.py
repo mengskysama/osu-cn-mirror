@@ -1,0 +1,10 @@
+MYSQL_HOST = ''
+MYSQL_PORT = 3306
+MYSQL_USER = 'root'
+MYSQL_PASS = ''
+MYSQL_DB = ''
+
+ACCESS_KEY = 'kr0rwh'
+SECRET_KEY = 'GYTU6WPfHfOz'
+BLUCKET_NAME = 'osu-cn-mirror'
+KEY = ''

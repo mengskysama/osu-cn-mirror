@@ -1,0 +1,15 @@
+
+
+
+.loading {
+	font-size:8px;
+	padding:5px 10px;
+	text-align:center;
+	width: 220px;
+	height: 19px;
+	margin:auto;
+	display:none;
+	border-radius: 5px;
+	margin-top: 10px;
+	position: relative;
+}

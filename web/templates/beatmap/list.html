@@ -1,0 +1,105 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>OSU! Mirror[CN]</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" type="text/css" href="/static/css/bootstrap.css">
+    <!-- Own CSS -->
+    <link rel="stylesheet" type="text/css" href="/static/css/user.css">
+    <!-- AutoScroll -->
+    <link rel="stylesheet" type="text/css" href="/static/css/scrollpagination_demo.css">
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/bootstrap-transition.js"></script>
+    <script src="/static/js/bootstrap-alert.js"></script>
+    <script type="text/javascript">
+        $().ready(function(){
+            var _top = $(".span16").css('top');
+            $(window).scroll(function(){
+                if($(this).scrollTop() > 200){
+                    $(".span16").css("top","0px");
+                }else{
+                    $(".span16").css("top",_top);
+                }
+            });
+        });
+    </script>
+    <script src="/static/js/scrollpagination.js?"></script>
+
+    </head>
+    <body class="accordion-heading">
+
+        <!-- 悬浮窗口 -->
+        <div class="header-wrap fixed w1000px">
+            <div class="header-extend">
+                <div class="header-container">
+                    <div class="span16" style="position: fixed; top: -55px;">
+                        <div class="meta">
+                            <div class="search" id="search_bar">
+                                <form action="" method="get">
+                                    <input class="xlarge" name="search_keywords" size="30" type="text" placeholder="Something for here／人◕‿‿◕人＼" onkeydown="if(event.keyCode == 13) $J('#search_bar .search-btn').click();">
+                                    <input class="search-btn"  type="submit" value="Search"/>
+                                </form>
+                        </div>
+                        <!-- .meta -->
+                    </div>
+                    <!-- .span16 -->
+                </div>
+                <!-- .container -->
+            </div>
+            <!-- .header-wrap-extend -->
+        </div>
+
+        <!-- 搜索框 -->
+        <div class="search centered-search clearfix">
+            <div class="shadow-wrap" id="index_search_bar">
+                <form action="" method="get">
+                    <input class="xlarge" name="search_keywords" size="30" type="text" placeholder="Something for here／人◕‿‿◕人＼" onkeydown="if(event.keyCode == 13) $J('#index_search_bar .search-btn').click();">
+                    <input class="search-btn"  type="submit" value="Search"/>
+                </form>
+            </div>
+
+        </div>
+
+        <!-- 主span -->
+        <div class="container">
+
+
+            <div class="beatmaplist">
+                {% for beatmap in beatmaps %}
+                <div class="beatmap" style="float:left">
+                    <div class="preview" style="background-image:url('http://b.ppy.sh/thumb/{{beatmap.id}}l.jpg')"></div>
+                    <div class="name"><a href="">{{beatmap.artist}} - {{beatmap.title}} </a></div>
+                    <div class="douban_details">
+                        <span>Creator:</span> {{beatmap.creator}} <br>
+                        <span>MaxBpm:</span> {{beatmap.bpm}} <br>
+                        <span>Title:</span> {{beatmap.title}}
+                        <br>
+                        <span>Artist:</span> {{beatmap.artistUnicode}} <br>
+                        <span>Status:</span> {{beatmap.status}} <br>
+                    </div>
+                    <div class="details"> <a href=""></a> <br>
+                        <span>Fork:</span> {{beatmap.fork}} <br>
+                        <span>UpdateTime:</span> {{beatmap.date}} <br>
+                        <span>Mode:</span> {{beatmap.mode}}
+                    </div>
+                    <div class="download">
+                        <a href="https://osu.ppy.sh/s/{{beatmap.id}}" class=" btn" target="_blank">Osu.ppy</a>
+                    </div>
+                    <div class="download">
+                        <a href="http://osu.mengsky.net/d.php?id={{beatmap.id}}" class=" btn" target="_blank">DownLoad</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+                <div style="float:left; text-align:center; width:100%">
+                    <div class="loading" id="loading">
+                        <img src="/static/img/ajax-loader.gif"/>
+                        Wait a moment... now loading!
+                    </div>
+                <div class="loading" id="nomoreresults">No more item.</div>
+            </div>
+        </div>
+    </body>
+</html>
